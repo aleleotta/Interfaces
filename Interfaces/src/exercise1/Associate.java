@@ -1,6 +1,15 @@
 package exercise1;
 
 public class Associate {
+	private int id;
+	private String name = "";
+	private int age = 0;
+	
+	public Associate(int id, String name, int age) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+	}
 }
 
 /*
