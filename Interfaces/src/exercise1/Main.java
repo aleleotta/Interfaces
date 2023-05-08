@@ -16,6 +16,15 @@ public class Main {
 			sc.nextLine();
 			switch(option) {
 			case 1:
+				System.out.print("Introduce an ID: ");
+				id = sc.nextInt();
+				sc.nextLine();
+				System.out.print("Introduce a name: ");
+				name = sc.nextLine();
+				System.out.print("Introduce an age: ");
+				age = sc.nextInt();
+				sc.nextLine();
+				per = new Associate(id, name, age);
 				break;
 			case 2:
 				break;
@@ -31,6 +40,7 @@ public class Main {
 				break;
 			}
 		}
+		sc.close();
 	}
 }
 
