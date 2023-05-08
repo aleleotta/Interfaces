@@ -11,6 +11,18 @@ public class Associate implements Comparable{
 		this.age = age;
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
 	@Override
 	public int compareTo(Associate anotherAssociate) {
 		int result = 0;
@@ -21,6 +33,20 @@ public class Associate implements Comparable{
 		}
 		return result;
 	}
+	
+	//This method is static,
+	//it won't be used to work with an object.
+	public static void menu() {
+		System.out.print("\nCRUD"
+				+ "\n======================"
+				+ "\n1) Create"
+				+ "\n2) Read"
+				+ "\n3) Update"
+				+ "\n4) Delete"
+				+ "\n5) Exit"
+				+ "\n\nOption: ");
+	}
+	
 }
 
 /*

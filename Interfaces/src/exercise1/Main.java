@@ -6,17 +6,31 @@ public class Main {
 		int id = 0;
 		String name = "";
 		int age = 0;
+		int option = 0;
 		Associate[] roster = new Associate[0];
 		Scanner sc =  new Scanner(System.in);
-		System.out.print("Introduce an ID: ");
-		id = sc.nextInt();
-		sc.nextLine();
-		System.out.print("Introduce a name: ");
-		name = sc.nextLine();
-		System.out.print("Introduce an age: ");
-		age = sc.nextInt();
-		sc.nextLine();
-		sc.close();
+		Associate per;
+		while(option != 5) {
+			Associate.menu();
+			option = sc.nextInt();
+			sc.nextLine();
+			switch(option) {
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				System.out.println("\nExiting program...\n\n\nProgram terminated,");
+				break;
+			default:
+				System.out.println("\nERROR!");
+				break;
+			}
+		}
 	}
 }
 
