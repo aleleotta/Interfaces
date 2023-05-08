@@ -3,7 +3,19 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
+		int id = 0;
+		String name = "";
+		int age = 0;
+		Associate[] roster = new Associate[0];
 		Scanner sc =  new Scanner(System.in);
+		System.out.print("Introduce an ID: ");
+		id = sc.nextInt();
+		sc.nextLine();
+		System.out.print("Introduce a name: ");
+		name = sc.nextLine();
+		System.out.print("Introduce an age: ");
+		age = sc.nextInt();
+		sc.nextLine();
 		sc.close();
 	}
 }
