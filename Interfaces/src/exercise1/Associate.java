@@ -1,6 +1,6 @@
 package exercise1;
 
-public class Associate {
+public class Associate implements Comparable{
 	private int id;
 	private String name = "";
 	private int age = 0;
@@ -9,6 +9,17 @@ public class Associate {
 		this.id = id;
 		this.name = name;
 		this.age = age;
+	}
+	
+	@Override
+	public int compareTo(Associate anotherAssociate) {
+		int result = 0;
+		if(this.id < anotherAssociate.id) {
+			result = -1;
+		} else if(this.id > anotherAssociate.id){
+			result = 1;
+		}
+		return result;
 	}
 }
 
