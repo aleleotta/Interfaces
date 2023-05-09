@@ -7,9 +7,11 @@ public class Main {
 		String name = "";
 		int age = 0;
 		int option = 0;
-		Associate[] roster = new Associate[0];
+		Associate[] roster = new Associate[10];
 		Scanner sc =  new Scanner(System.in);
-		Associate per;
+		Associate person;
+		System.out.println(Arrays.toString(roster));
+		option = 5;
 		while(option != 5) {
 			Associate.menu();
 			option = sc.nextInt();
@@ -24,9 +26,20 @@ public class Main {
 				System.out.print("Introduce an age: ");
 				age = sc.nextInt();
 				sc.nextLine();
-				per = new Associate(id, name, age);
+				person = new Associate(id, name, age);
+				roster = Arrays.copyOf(roster, roster.length+1);
+				for(int i = 0; i < roster.length; i++) {
+					if(roster[i] == null) {
+						roster[i] = person;
+					}
+				}
 				break;
 			case 2:
+				for(Associate per: roster) {
+					System.out.println("\nID: " + per.getId()
+					+ "\nName: " + per.getName()
+					+ "\nAge: " + per.getAge() + "\n\n");
+				}
 				break;
 			case 3:
 				break;
