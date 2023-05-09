@@ -10,14 +10,17 @@ public class Main {
 		Associate[] roster = new Associate[10];
 		Scanner sc =  new Scanner(System.in);
 		Associate person;
-		System.out.println(Arrays.toString(roster));
-		option = 5;
-		while(option != 5) {
+		for(int i = 0; i < roster.length; i++) {
+			person = new Associate();
+			roster[i] = person;
+		}
+		option = 0;
+		while(option != 6) {
 			Associate.menu();
 			option = sc.nextInt();
 			sc.nextLine();
 			switch(option) {
-			case 1:
+			case 1: //CREATE
 				System.out.print("Introduce an ID: ");
 				id = sc.nextInt();
 				sc.nextLine();
@@ -29,26 +32,59 @@ public class Main {
 				person = new Associate(id, name, age);
 				roster = Arrays.copyOf(roster, roster.length+1);
 				for(int i = 0; i < roster.length; i++) {
-					if(roster[i] == null) {
+					if(roster[i].getId() == 0) {
 						roster[i] = person;
 					}
 				}
 				break;
-			case 2:
+			case 2: //READ
 				for(Associate per: roster) {
 					System.out.println("\nID: " + per.getId()
 					+ "\nName: " + per.getName()
-					+ "\nAge: " + per.getAge() + "\n\n");
+					+ "\nAge: " + per.getAge() + "\n");
 				}
 				break;
-			case 3:
+			case 3: //UPDATE
+				System.out.println("Which ID would you like to update?");
+				id = sc.nextInt();
+				sc.nextLine();
+				for(int i = 0; i < roster.length; i++) {
+					int option1 = 0;
+					if(roster[i].getId() == id) {
+						System.out.print("Choose an attribute to modify: ");
+						option1 = sc.nextInt();
+						sc.nextLine();
+						switch(option1) {
+						case 1: //ID
+							System.out.print("ID: ");
+							id = sc.nextInt();
+							sc.nextLine();
+							break;
+						case 2: //NAME
+							break;
+						case 3: //AGE
+							break;
+						}
+					}
+				}
 				break;
-			case 4:
+			case 4: //DELETE
 				break;
-			case 5:
+			case 5: //ORDER
+				for(Associate per: roster) {
+					for(Associate per1: roster) {
+						if(per.compareTo(per1) == -1) {
+							for(int i = 0; i < roster.length; i++) {}
+						} else if (per.compareTo(per1) == 1) {
+							for(int i = 0; i < roster.length; i++) {}
+						}
+					}
+				}
+				break;
+			case 6: //EXIT
 				System.out.println("\nExiting program...\n\n\nProgram terminated,");
 				break;
-			default:
+			default: //ERROR
 				System.out.println("\nERROR!");
 				break;
 			}

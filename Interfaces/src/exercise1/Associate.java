@@ -1,9 +1,11 @@
 package exercise1;
 
 public class Associate implements Comparable{
-	private int id;
-	private String name = "";
+	private int id = 0;
+	private String name = "Blank";
 	private int age = 0;
+	
+	public Associate() {}
 	
 	public Associate(int id, String name, int age) {
 		this.id = id;
@@ -11,6 +13,18 @@ public class Associate implements Comparable{
 		this.age = age;
 	}
 	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -43,7 +57,8 @@ public class Associate implements Comparable{
 				+ "\n2) Read"
 				+ "\n3) Update"
 				+ "\n4) Delete"
-				+ "\n5) Exit"
+				+ "\n5) Delete"
+				+ "\n6) Exit"
 				+ "\n\nOption: ");
 	}
 	
