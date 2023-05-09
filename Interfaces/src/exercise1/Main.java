@@ -7,14 +7,13 @@ public class Main {
 		String name = "";
 		int age = 0;
 		int option = 0;
-		Associate[] roster = new Associate[10];
+		Associate[] roster = new Associate[0];
 		Scanner sc =  new Scanner(System.in);
 		Associate person;
 		for(int i = 0; i < roster.length; i++) {
 			person = new Associate();
 			roster[i] = person;
 		}
-		option = 0;
 		while(option != 6) {
 			Associate.menu();
 			option = sc.nextInt();
@@ -61,8 +60,13 @@ public class Main {
 							sc.nextLine();
 							break;
 						case 2: //NAME
+							System.out.print("Name: ");
+							name = sc.nextLine();
 							break;
 						case 3: //AGE
+							System.out.print("Age: ");
+							age = sc.nextInt();
+							sc.nextLine();
 							break;
 						}
 					}
@@ -71,15 +75,8 @@ public class Main {
 			case 4: //DELETE
 				break;
 			case 5: //ORDER
-				for(Associate per: roster) {
-					for(Associate per1: roster) {
-						if(per.compareTo(per1) == -1) {
-							for(int i = 0; i < roster.length; i++) {}
-						} else if (per.compareTo(per1) == 1) {
-							for(int i = 0; i < roster.length; i++) {}
-						}
-					}
-				}
+				Arrays.sort(roster);
+				System.out.println(Arrays.deepToString(roster));
 				break;
 			case 6: //EXIT
 				System.out.println("\nExiting program...\n\n\nProgram terminated,");
